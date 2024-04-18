@@ -1,13 +1,13 @@
 #[Title]#
-Brakeman scan information
+TheHive case information
 
 
 #[Application]#
 %scan_info.app_path%
 
 
-#[BrakemanVersion]#
-%scan_info.brakeman_version%
+#[TheHive Version]#
+%scan_info.thehive_version%
 
 
 #[RailsVersion]#

@@ -1,19 +1,19 @@
 $:.push File.expand_path('../lib', __FILE__)
-require 'dradis/plugins/brakeman/version'
-version = Dradis::Plugins::Brakeman::VERSION::STRING
+require 'dradis/plugins/thehive/version'
+version = Dradis::Plugins::TheHive::VERSION::STRING
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
   spec.platform    = Gem::Platform::RUBY
-  spec.name        = 'dradis-brakeman'
+  spec.name        = 'dradis-thehive'
   spec.version     = version
-  spec.summary     = 'Brakeman add-on for the Dradis Framework.'
-  spec.description = 'This add-on allows you to upload and parse output produced from Brakeman Ruby on Rails security scanner into Dradis.'
+  spec.summary     = 'TheHive add-on for the Dradis Framework.'
+  spec.description = 'This add-on allows you to upload and parse output produced from TheHive Ruby on Rails security scanner into Dradis.'
 
   spec.license     = 'GPL-2'
 
-  spec.authors     = ['Daniel Martin']
-  spec.homepage    = 'https://dradis.com/integrations/brakeman.html'
+  spec.authors     = ['Gede Rico Wijaya']
+  spec.homepage    = 'https://dradis.com/integrations/thehive.html'
 
   spec.files       = `git ls-files`.split($\)
   spec.executables = spec.files.grep(%r{^bin/}).map { |f| File.basename(f) }

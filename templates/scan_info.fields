@@ -8,4 +8,4 @@ scan_info.number_of_controllers
 scan_info.number_of_models
 scan_info.number_of_templates
 scan_info.ruby_version
-scan_info.brakeman_version
+scan_info.thehive_version

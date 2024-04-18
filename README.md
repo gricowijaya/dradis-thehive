@@ -1,8 +1,6 @@
-# Brakeman add-on for Dradis
+# TheHive add-on for Dradis
 
-[![Build Status](https://secure.travis-ci.org/dradis/dradis-brakeman.png?branch=master)](http://travis-ci.org/dradis/dradis-brakeman) [![Code Climate](https://codeclimate.com/github/dradis/dradis-brakeman.png)](https://codeclimate.com/github/dradis/dradis-brakeman.png)
-
-Upload [Brakeman](http://brakemanscanner.org/) Rails security scanner JSON output into Dradis.
+Upload [TheHive](https://docs.strangebee.com/thehive/user-guides/organisation/templates/case-templates/?h=export+json#configuration-parameters) Rails security scanner JSON output into Dradis.
 
 The add-on requires [Dradis CE](https://dradis.com/ce/) > 3.0, or [Dradis Pro](https://dradis.com/).
 

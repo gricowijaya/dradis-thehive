@@ -1,6 +1,6 @@
 module Dradis
   module Plugins
-    module Brakeman
+    module TheHive
       class FieldProcessor < Dradis::Plugins::Upload::FieldProcessor
         # No need to implement anything here
         # def post_initialize(args={})

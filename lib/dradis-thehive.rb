@@ -2,4 +2,4 @@
 require 'dradis-plugins'
 
 # Load this add-on's engine
-require 'dradis/plugins/brakeman'
+require 'dradis/plugins/thehive'
