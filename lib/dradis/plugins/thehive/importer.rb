@@ -21,8 +21,15 @@ module Dradis::Plugins::TheHive
       if data[0].key?("_type") && data[0].key?("_createdBy") && data[0].key?("severityLabel") && data[0].key?("tlpLabel") && data[0].key?("papLabel")
         logger.info { "This JSON file appears to be from TheHive." }
       else
-        logger.info { "This JSON file does not appear to be from TheHive." }
+        logger.error "ERROR: no '_type', '_createdBy', 'severityLabel', 'tlpLabel' and 'papLabel' field present in the provided "\
+                     "data. Are you sure you uploaded a TheHive file?"
       end
+
+      # iterates through the array of JSON
+      data.each do |case_item|
+        process_case_item(case_item)
+      end
+
       #unless data.key?("case_export")
       #  logger.error "ERROR: no 'case_export' field present in the provided "\
       #               "data. Are you sure you uploaded a TheHive file?"
@@ -46,6 +53,19 @@ module Dradis::Plugins::TheHive
 
     end
 
-    def process_case_item()
+    private
+    attr_accessor :site_node
+
+    def process_case_item(case_item)
+      logger.info { "Case ID: #{case_item['_id']}" }
+      logger.info { "Title: #{case_item['title']}" }
+      logger.info { "Severity: #{case_item['severityLabel']}" }
+      logger.info { "TLP: #{case_item['tlpLabel']}" }
+      logger.info { "PAP: #{case_item['papLabel']}" }
+      logger.info { "Created By: #{case_item['_createdBy']}" }
+
+      agent_ip = case_item['tags'][2].split('=')[1] # Extract the the agent IP address from the tag
+      site_node = content_service.create_node( label: agent_ip, type: 'Case', parent: site_node )
+    end
   end
 end
