@@ -27,6 +27,7 @@ module Dradis::Plugins::TheHive
 
       # iterates through the array of JSON
       data.each do |case_item|
+        process_agent(case_item)
         process_case_item(case_item)
       end
 
@@ -56,16 +57,30 @@ module Dradis::Plugins::TheHive
     private
     attr_accessor :site_node
 
-    def process_case_item(case_item)
+    def process_agent(case_item)
       logger.info { "Case ID: #{case_item['_id']}" }
       logger.info { "Title: #{case_item['title']}" }
+      logger.info { "Rule ID: #{case_item['tags'][1]}" }
+      logger.info { "Agent IP: #{case_item['tags'][2]}" }
       logger.info { "Severity: #{case_item['severityLabel']}" }
       logger.info { "TLP: #{case_item['tlpLabel']}" }
       logger.info { "PAP: #{case_item['papLabel']}" }
+      logger.info { "Created At: #{case_item['_createdAt']}" }
       logger.info { "Created By: #{case_item['_createdBy']}" }
 
-      agent_ip = case_item['tags'][2].split('=')[1] # Extract the the agent IP address from the tag
-      site_node = content_service.create_node( label: agent_ip, type: 'Case', parent: site_node )
+      # Extract the the agent IP address from the tag
+      agent_ip = case_item['tags'][2] 
+      case_item['tags'].each do |tag|
+        content_service.create_note text: tag
+      end
+
+      site_node = content_service.create_node( label: agent_ip, type: :host, parent: site_node )
+    end
+
+    def process_case_item(case_item)
+      issue_text = template_service.process_template(template: 'issue', data: case_item)
+      issue = content_service.create_issue(text: issue_text, id: case_item[_id])
+      content_service.create_evidence(issue: issue, note site_node, content: case_item['description'])
     end
   end
 end
