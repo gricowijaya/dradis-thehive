@@ -5,6 +5,7 @@ issue.severityLabel
 issue.status
 issue.stage
 issue.assignee
+issue.description
 issue.summary
 issue.newDate
 issue.inProgressDate

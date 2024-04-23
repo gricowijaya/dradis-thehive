@@ -4,6 +4,9 @@
 #[Title]#
 TheHive Case  %issue.title%
 
+#[Description]#
+%issue.description%
+
 #[Severity]#
 %issue.severity% - %issue.severityLabel%
 
