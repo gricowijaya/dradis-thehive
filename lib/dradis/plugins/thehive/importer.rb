@@ -81,7 +81,7 @@ module Dradis::Plugins::TheHive
       issue_text = template_service.process_template(template: 'issue', data: case_item)
       issue = content_service.create_issue(text: issue_text, id: case_item['_id'])
       description = case_item['description']
-      content_service.create_evidence(issue: issue, note site_node, content: description)
+      content_service.create_evidence(issue: issue, node: site_node, content: description)
     end
   end
 end
