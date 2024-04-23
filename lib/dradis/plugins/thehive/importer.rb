@@ -74,14 +74,16 @@ module Dradis::Plugins::TheHive
         content_service.create_note text: tag
       end
 
+      issue = template_service.process_template(template: 'issue', data: case_item)
+      content_service.create_note text: issue
       site_node = content_service.create_node( label: agent_ip, type: :host, parent: site_node )
     end
 
     def process_case_item(case_item)
       issue_text = template_service.process_template(template: 'issue', data: case_item)
       issue = content_service.create_issue(text: issue_text, id: case_item['_id'])
-      description = case_item['description']
-      content_service.create_evidence(issue: issue, node: site_node, content: description)
+      #evidence_content = template_service.process_template(template: ' ') description = case_item['description']
+      #content_service.create_evidence(issue: issue, node: site_node, content: description)
     end
   end
 end
