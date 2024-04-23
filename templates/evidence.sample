@@ -1,0 +1,93 @@
+[ 
+  { 
+    "description": "### Timestamp\n| key | val |\n| ------ | ------ |\n| **timestamp** | 2024-04-17T08:50:33.029+0000 |\n### Rule\n| key | val |\n| ------ | ------ |\n| **rule.level** | 5 |\n| **rule.description** | syslog: User authentication failure. |\n| **rule.id** | 2501 |\n| **rule.firedtimes** | 217 |\n| **rule.mail** | False |\n| **rule.groups** | ['syslog', 'access_control', 'authentication_failed'] |\n| **rule.pci_dss** | ['10.2.4', '10.2.5'] |\n| **rule.gpg13** | ['7.8'] |\n| **rule.gdpr** | ['IV_35.7.d', 'IV_32.2'] |\n| **rule.hipaa** | ['164.312.b'] |\n| **rule.nist_800_53** | ['AU.14', 'AC.7'] |\n| **rule.tsc** | ['CC6.1', 'CC6.8', 'CC7.2', 'CC7.3'] |\n### Agent\n| key | val |\n| ------ | ------ |\n| **agent.id** | 001 |\n| **agent.name** | pop-os |\n| **agent.ip** | 192.168.18.2 |\n### Manager\n| key | val |\n| ------ | ------ |\n| **manager.name** | siem |\n### Id\n| key | val |\n| ------ | ------ |\n| **id** | 1713343833.2528451 |\n### Full_log\n| key | val |\n| ------ | ------ |\n| **full_log** | Apr 17 16:50:32 pop-os mattermost[657644]: {\"timestamp\":\"2024-04-17 16:50:32.507 +08:00\",\"level\":\"error\",\"msg\":\"Failed to ping DB\",\"caller\":\"sqlstore/store.go:270\",\"database\":\"master\",\"dataSource\":\"postgres://%2A%2A%2A%2A:%2A%2A%2A%2A@localhost/mattermost_test?binary_parameters=yes&connect_timeout=10&sslmode=disable\",\"retrying in seconds\":10,\"error\":\"pq: password authentication failed for user \\\"mmuser\\\"\"} |\n### Predecoder\n| key | val |\n| ------ | ------ |\n| **predecoder.program_name** | mattermost |\n| **predecoder.timestamp** | Apr 17 16:50:32 |\n| **predecoder.hostname** | pop-os |\n### Location\n| key | val |\n| ------ | ------ |\n| **location** | /var/log/syslog |\n",
+    "tags": [
+      "incident",
+      "rule=2501",
+      "agent_ip=192.168.18.2",
+      "agent_name=pop-os",
+      "agent_id=001",
+      "wazuh"
+    ],
+    "extraData": {
+      "procedureCount": 0,
+      "observableStats": {
+        "total": 1
+      },
+      "isOwner": true,
+      "status": {
+        "_id": "~20552",
+        "_type": "CaseStatus",
+        "_createdAt": 1712209474096,
+        "_createdBy": "system@thehive.local",
+        "value": "FalsePositive",
+        "stage": "Closed",
+        "order": 4,
+        "colour": "#52c41a",
+        "extraData": {}
+      },
+      "actionRequired": false,
+      "alerts": [
+        {
+          "type": "wazuh_alert",
+          "source": "wazuh"
+        }
+      ],
+      "contributors": [
+        {
+          "login": "rico@tjakrabirawa.id"
+        }
+      ],
+      "shareCount": 0,
+      "owningOrganisation": {
+        "_id": "~4136",
+        "_type": "Organisation",
+        "_createdBy": "admin@thehive.local",
+        "_createdAt": 1712237278981,
+        "name": "Tjakrabirawa",
+        "description": "Tjakrabirawa",
+        "taskRule": "manual",
+        "observableRule": "manual",
+        "links": [],
+        "locked": false,
+        "extraData": {}
+      },
+      "permissions": [
+        "manageCase/create",
+        "manageAlert/update",
+        "manageCaseTemplate",
+        "manageProcedure",
+        "managePage",
+        "manageObservable",
+        "manageCase/delete",
+        "manageCaseReport",
+        "accessTheHiveFS",
+        "manageAction",
+        "manageShare",
+        "manageAnalyse",
+        "manageFunction/invoke",
+        "manageTask",
+        "manageCase/merge",
+        "manageCustomEvent",
+        "manageAlert/import",
+        "manageCase/changeOwnership",
+        "manageUser",
+        "manageComment",
+        "manageAlert/reopen",
+        "manageTag",
+        "manageConfig",
+        "managePageTemplate",
+        "manageAlert/create",
+        "manageAlert/delete",
+        "manageCaseReportTemplate",
+        "manageFunction/create",
+        "manageKnowledgeBase",
+        "manageCase/update",
+        "manageCase/reopen"
+      ],
+      "taskStats": {
+        "total": 0
+      }
+    }
+  }
+]
