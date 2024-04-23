@@ -1,35 +1,35 @@
 #[TheHive Case Number]#
-%case_export.number%
+%issue.number%
 
 #[Title]#
-TheHive Case  %case_export.title%
+TheHive Case  %issue.title%
 
 #[Severity]#
-%case_export.severity% - %case_export.severityLabel%
+%issue.severity% - %issue.severityLabel%
 
 #[Status]#
-%case_export.status%
+%issue.status%
 
 #[Summary]#
-%case_export.summary%
+%issue.summary%
 
 #[In Progress Date]#
-%case_export.status%
+%issue.inProgresssDate%
 
 #[Time To Detect]#
-%case_export.timeToDetect%
+%issue.timeToDetect%
 
 #[Time To Acknowledge]#
-%case_export.timeToAcknowledge%
+%issue.timeToAcknowledge%
 
 #[Time To Qualify]#
-%case_export.timeToQualify%
+%issue.timeToQualify%
 
 #[Handling Duration]#
-%case_export.handlingDuration%
+%issue.handlingDuration%
 
 #[Assignee]#
-%case_export.assignee%
+%issue.assignee%
 
 #[WarningCount]#
-%case_export.security_warnings%
+%issue.security_warnings%
